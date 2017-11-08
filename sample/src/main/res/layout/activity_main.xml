@@ -1,0 +1,71 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="25dip"
+      android:background="@color/primary_dark"
+      />
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:id="@+id/toolbar"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/toolbar_dropshadow"
+        android:layout_below="@+id/toolbar"
+        />
+
+
+    <jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_swipe"
+        android:layout_below="@+id/toolbar"
+        >
+
+      <ListView
+          android:id="@+id/main_list"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />
+
+    </jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
+
+    <SeekBar
+        android:id="@+id/seekbar_of_drop_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:layout_alignParentBottom="true"
+        />
+
+    <Button
+        android:id="@+id/button_of_wave_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seekbar_of_drop_height"
+        android:text="@string/btn_change_color" />
+
+  </RelativeLayout>
+
+</LinearLayout>
